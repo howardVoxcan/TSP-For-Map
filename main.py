@@ -1,6 +1,6 @@
 import sys
 from graph import read_graph, is_hamiltonian_graph
-from hamilton import find_hamilton_circuit
+from Hamilton import find_hamilton_circuit
 from utils import print_hamilton_circuit
 
 def main():
@@ -10,12 +10,12 @@ def main():
         print(0)
         return
 
-    min_cost = [float('inf')]  # Dùng list để giữ giá trị tối thiểu (vì Python không hỗ trợ tham chiếu biến kiểu int)
+    min_cost = [float('inf')] 
     best_circuit = []
 
     is_free = [True] * (n + 1)
     circuit = [0] * (n + 1)
-    circuit[1] = 1  # Bắt đầu từ đỉnh 1
+    circuit[1] = 1 
     is_free[1] = False
 
     find_hamilton_circuit(2, n, adj, cost, circuit, is_free, 0, min_cost, best_circuit)
